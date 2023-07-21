@@ -55,3 +55,103 @@ a=input()
 print(a)
 b=input("Enter: ")
 print(b)
+
+#int - 문자열 형태의 숫자나 소수점 있는 숫자를 정수 형태로 리턴
+#int(x, radix) - radix 진수로 표현된 문자열 x를 10진수로 변환하여 리턴
+print(int('3'))
+print(int(3.4))
+print(int('11',2))
+print(int('1A',16))
+
+#isinstance - 첫번째 인수 인스턴스, 두번째 인수 클래스 / 인스턴스가 클래스의 인스턴스인지 판단
+class Person: pass
+a=Person()
+print(isinstance(a,Person))
+b=3
+print(isinstance(b,Person))
+
+#lambda - 함수 생성시 사용하는 예약어
+sum=lambda a,b:a+b
+print(sum(3,4))
+myList=[lambda a,b:a+b, lambda a,b:a*b]
+print(myList[0](3,4))
+print(myList[1](3,4))
+
+#len - 입력값의 길이 리턴
+print(len("python"))
+print(len([1,2,3]))
+print(len((1,'a')))
+
+#list - 반복가능한 자료형 입력받아 리스트로 만들어 리턴
+print(list("python"))
+print(list((1,2,3)))
+
+#map - 함수와 반복가능한 자료형 입력받아 함수에 의해 수행된 결과 리턴
+def two_times(numberList):
+    result = []
+    for number in numberList:
+        result.append(number*2)
+    return result
+result = two_times([1,2,3,4])
+print(result)
+
+def two_times(x): return x*2
+print(list(map(two_times,[1,2,3,4])))
+
+print(list(map(lambda a:a*2,[1,2,3,4,])))
+
+def plus_one(x):
+    return x+1
+print(list(map(plus_one,[1,2,3,4,5])))
+
+#max - 반복가능한 자료형 입력받아 최대값 리턴
+print(max([1,2,3]))
+print(max("python"))
+
+#min - 반복가능한 자료형 입력받아 최소값 리턴
+print(min([1,2,3]))
+print(min("python"))
+
+#oct - 정수 형태의 숫자를 8진수 문자열로 리턴
+print(oct(34))
+print(oct(12345))
+
+#ord - 문자의 아스키 코드값 리턴
+print(ord('a'))
+print(ord('0'))
+
+#pow - x의 y 제곱한 결과값 리턴
+print(pow(2,4))
+print(pow(3,3))
+
+#range - 입력받은 숫자에 해당되는 범위값 반복가능한 객체로 리턴
+print(list(range(5)))
+print(list(range(5,10)))
+print(list(range(0,-10,-1)))
+
+#str - 문자열 형태로 객체 변환
+print(str(3))
+print(str('hi'.upper()))
+
+#tuple - 반복가능한 자료형 입력받아 튜플 형태로 바꾸어 리턴
+print(tuple("abc"))
+print(tuple([1,2,3]))
+print(tuple((1,2,3)))
+
+#type - 입력값의 자료형이 무엇인지 알려줌
+print(type('abc'))
+print(type([]))
+print(type(open("test",'w')))
+
+#zip - 동일한 개수로 이루어진 자료형 묶어줌
+print(list(zip([1,2,3],[4,5,6])))
+print(list(zip([1,2,3],[4,5,6],[7,8,9])))
+print(list(zip("abc","def")))
+
+#open - 파일읽기, 읽기방법 입력하여 파일 객체 리턴
+f=open("binary_file","rb") #바이너리 읽기모드
+fread = open("read_mode.txt","r")
+fread2=open("read_mode.txt")
+fappend = open("append_mode.txt",a) #추가모드로 파일 열기
+
+
