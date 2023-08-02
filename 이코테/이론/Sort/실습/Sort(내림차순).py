@@ -9,4 +9,6 @@ n=3
 array=[15,27,12]
 
 array = sorted(array, reverse=True)
-print(array)
+
+for i in array:
+    print(i, end=' ')
